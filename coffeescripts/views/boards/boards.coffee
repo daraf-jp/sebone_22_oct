@@ -1,5 +1,7 @@
-define ['jquery', 'backbone'], ($, Backbone) ->
+define ['jquery', 'backbone', 'templates/boards/boards'], ($, Backbone, template) ->
   class BoardsView extends Backbone.View
     initialize: (opitons) ->
-      console.log 'Backbone.Viewを作成しました'
-      console.log '監視対象は' + @$el.html() + 'です'
+      @renderBoards()
+
+    renderBoards: ->
+      @$el.html template()
