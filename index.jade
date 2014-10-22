@@ -6,10 +6,17 @@ html(lang="ja")
     meta(content='ja', http-equiv='Content-Language')
     meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
     script(type='text/javascript', src='bower_components/requirejs/require.js', data-main='js/lib/index.js')
+    link(rel='stylesheet', type='text/css', href='bower_components/bootstrap/dist/css/bootstrap.css')
   body
-    div(data-js='app')
-      h1 Sebone
-      form
-        label 新しい掲示板
-        input(type='text', placeholder='新しい掲示板名を入力')
-        input(type='submit', value='保存')
+    .container(data-js='app')
+      h1.text-center Sebone&nbsp;
+        span.glyphicon.glyphicon-comment
+      hr
+      form.form-horizontal(role='form')
+        .form-group
+          label.col-sm-2.control-label(for='board-new-input') 新しい掲示板
+          .col-sm-8
+            input#board-new-input.form-control(type='text', placeholder='新しい掲示板名を入力')
+        .form-group
+          .col-sm-offset-2.col-sm-8
+            input.btn.btn-default.pull-right(type='submit', value='保存')
