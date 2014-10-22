@@ -35,4 +35,4 @@ gulp.task 'jade', ->
 
 gulp.task 'watch', ->
   gulp.watch 'coffeescripts/**', ['coffee']
-  gulp.watch 'index.jade', ['jade']
+  gulp.watch ['index.jade', 'templates/**'], ['jade']
