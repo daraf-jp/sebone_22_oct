@@ -1,0 +1,16 @@
+{
+  "name": "sebone_22_oct",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kazukitash/sebone_22_oct",
+  "authors": [
+    "kazukitash <takahashi-k@daraf.co.jp>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
