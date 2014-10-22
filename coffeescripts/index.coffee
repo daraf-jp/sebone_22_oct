@@ -4,4 +4,3 @@ require.config
 
 require ['jquery'], ($) ->
   $ ->
-    $('[data-js=app]').text 'jQuery!'
