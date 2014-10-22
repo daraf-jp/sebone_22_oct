@@ -9,35 +9,3 @@ html(lang="ja")
     link(rel='stylesheet', type='text/css', href='bower_components/bootstrap/dist/css/bootstrap.css')
   body
     .container(data-js='app')
-      h1.text-center Sebone&nbsp;
-        span.glyphicon.glyphicon-comment
-      hr
-      form.form-horizontal(role='form')
-        .form-group
-          label.col-sm-2.control-label(for='board-new-input') 新しい掲示板
-          .col-sm-8
-            input#board-new-input.form-control(type='text', placeholder='新しい掲示板名を入力')
-        .form-group
-          .col-sm-offset-2.col-sm-8
-            input.btn.btn-default.pull-right(type='submit', value='保存')
-      .row
-        .col-sm-offset-2.col-sm-8
-          .list-group
-            .list-group-item
-              span.badge
-                span.glyphicon.glyphicon-remove
-              span.badge
-                span.glyphicon.glyphicon-edit
-              = '掲示板1'
-            .list-group-item
-              span.badge
-                span.glyphicon.glyphicon-remove
-              span.badge
-                span.glyphicon.glyphicon-edit
-              = '掲示板2'
-            .list-group-item
-              span.badge
-                span.glyphicon.glyphicon-remove
-              span.badge
-                span.glyphicon.glyphicon-edit
-              = '掲示板3'
