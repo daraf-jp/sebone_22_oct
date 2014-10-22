@@ -14,3 +14,6 @@ gulp.task 'coffee', ->
   .pipe coffee bare: true
   .on 'error', printError
   .pipe gulp.dest 'js/lib/'
+
+gulp.task 'watch', ->
+  gulp.watch 'coffeescripts/**', ['coffee']
