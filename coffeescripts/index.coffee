@@ -5,6 +5,9 @@ require.config
     backbone: '../../bower_components/backbone/backbone'
     jade: '../../bower_components/jade/runtime'
 
-require ['jquery', 'views/boards/boards'], ($, BoardsView) ->
+require ['jquery', 'views/boards/boards', 'models/board'], ($, BoardsView, Board) ->
   $ ->
     new BoardsView(el: $('[data-js=app]'))
+
+    model = new Board()
+    console.log model.get('name')
