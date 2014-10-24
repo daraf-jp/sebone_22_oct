@@ -8,4 +8,4 @@ require.config
 require ['jquery', 'views/boards/boards', 'collections/boards'], ($, BoardsView, Boards) ->
   $ ->
     boards = new Boards()
-    new BoardsView(el: $('[data-js=app]'))
+    new BoardsView(el: $('[data-js=app]'), boards: boards)
