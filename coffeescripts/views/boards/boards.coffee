@@ -1,4 +1,4 @@
-define ['jquery', 'backbone', 'templates/boards/boards'], ($, Backbone, template) ->
+define ['jquery', 'backbone', 'templates/boards/boards', 'views/boards/new'], ($, Backbone, template, NewView) ->
   class BoardsView extends Backbone.View
     events:
       'click [data-js=destroy]' : 'destroy'
@@ -8,6 +8,7 @@ define ['jquery', 'backbone', 'templates/boards/boards'], ($, Backbone, template
 
     renderBoards: ->
       @$el.html template()
+      new NewView(el: @$('[data-js=new]'))
 
     destroy: ->
       console.log '×ボタンが押されました'
