@@ -1,4 +1,4 @@
-define ['jquery', 'backbone'], ($, Backbone) ->
+define ['jquery', 'backbone', 'views/boards/show'], ($, Backbone, ShowView) ->
   class IndexView extends Backbone.View
     initialize: (options) ->
       @boards = options.boards
@@ -9,4 +9,5 @@ define ['jquery', 'backbone'], ($, Backbone) ->
         @renderBoard(board)
 
     renderBoard: (board) ->
-      @$el.append board.get('name')
+      view = new ShowView(board: board)
+      @$el.append view.render().el
