@@ -3,6 +3,9 @@ define ['jquery', 'backbone', 'models/board'], ($, Backbone, Board) ->
     events:
       'submit' : 'submit'
 
+    initialize: (options) ->
+      @boards = options.boards
+
     submit: (e) ->
       e.stopPropagation()
       e.preventDefault()
@@ -11,4 +14,4 @@ define ['jquery', 'backbone', 'models/board'], ($, Backbone, Board) ->
       board.set name: @$('[data-js=new_name]').val()
       @$('[data-js=new_name]').val('')
 
-      console.log  board.get('name') + 'を保存しました'
+      @boards.add board
