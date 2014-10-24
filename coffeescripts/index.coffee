@@ -5,11 +5,6 @@ require.config
     backbone: '../../bower_components/backbone/backbone'
     jade: '../../bower_components/jade/runtime'
 
-require ['jquery', 'views/boards/boards', 'models/board'], ($, BoardsView, Board) ->
+require ['jquery', 'views/boards/boards'], ($, BoardsView) ->
   $ ->
     new BoardsView(el: $('[data-js=app]'))
-
-    model = new Board()
-    console.log model.get('name')
-    model.set name: '値を変更しました'
-    console.log model.get('name')
