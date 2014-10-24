@@ -1,4 +1,4 @@
-define ['jquery', 'backbone'], ($, Backbone) ->
+define ['jquery', 'backbone', 'models/board'], ($, Backbone, Board) ->
   class NewView extends Backbone.View
     events:
       'submit' : 'submit'
@@ -6,5 +6,9 @@ define ['jquery', 'backbone'], ($, Backbone) ->
     submit: (e) ->
       e.stopPropagation()
       e.preventDefault()
-      name = @$('[data-js=new_name]').val()
-      console.log name + 'を保存します'
+
+      board = new Board()
+      board.set name: @$('[data-js=new_name]').val()
+      @$('[data-js=new_name]').val('')
+
+      console.log  board.get('name') + 'を保存しました'
