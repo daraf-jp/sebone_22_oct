@@ -11,3 +11,5 @@ require ['jquery', 'views/boards/boards', 'models/board'], ($, BoardsView, Board
 
     model = new Board()
     console.log model.get('name')
+    model.set name: '値を変更しました'
+    console.log model.get('name')
