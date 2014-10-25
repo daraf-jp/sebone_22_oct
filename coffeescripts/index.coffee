@@ -5,7 +5,9 @@ require.config
     backbone: '../../bower_components/backbone/backbone'
     jade: '../../bower_components/jade/runtime'
 
-require ['jquery', 'views/boards/boards', 'collections/boards'], ($, BoardsView, Boards) ->
+require ['jquery', 'routers/app', 'collections/boards'], ($, AppRouter, Boards) ->
   $ ->
     boards = new Boards()
-    new BoardsView(el: $('[data-js=app]'), boards: boards)
+    new AppRouter($el: $('[data-js=app]'), boards: boards)
+    Backbone.history ||= new Backbone.History({})
+    Backbone.history.start()
