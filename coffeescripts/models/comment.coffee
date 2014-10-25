@@ -5,4 +5,8 @@ define ['jquery', 'backbone', 'backbone_relational'], ($, Backbone) ->
       content: ''
       created_at: ''
 
+    validate: (attrs) ->
+      if attrs.content.length is 0
+        'コメントが未入力です'
+
   Comment.setup()
