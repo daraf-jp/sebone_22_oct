@@ -11,6 +11,7 @@ form.form-horizontal(role='form', data-js='new')
     label.col-sm-2.control-label(for='new-content-input') 新しいコメント
     .col-sm-8
       textarea#new-content-input.form-control(placeholder='新しいコメント', rows='5', data-js='new_content')
+      .text-danger(data-js='invalid')
   .form-group
     .col-sm-offset-2.col-sm-8
       button.btn.btn-default.pull-right(type='submit') 保存
