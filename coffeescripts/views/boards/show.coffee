@@ -1,12 +1,14 @@
 define ['jquery', 'backbone', 'templates/boards/show', 'templates/boards/edit'], ($, Backbone, templateShow, templateEdit) ->
   class IndexView extends Backbone.View
     className: 'list-group-item'
+    tagName: 'a'
 
     events:
       'click [data-js=destroy]' : 'destroy'
       'click [data-js=edit]' : 'edit'
       'click [data-js=done]' : 'done'
       'click [data-js=cancel]' : 'cancel'
+      'click [data-js=edit_name]' : 'prevent'
 
     initialize: (options) ->
       @board = options.board
@@ -15,6 +17,7 @@ define ['jquery', 'backbone', 'templates/boards/show', 'templates/boards/edit'],
 
     render: ->
       @$el.html templateShow(board: @board)
+      @$el.attr 'href', '#' + @board.cid
       @
 
     destroy: (e) ->
@@ -46,3 +49,8 @@ define ['jquery', 'backbone', 'templates/boards/show', 'templates/boards/edit'],
       e.stopPropagation()
 
       @$el.html templateShow(board: @board)
+
+
+    prevent: (e) ->
+      e.preventDefault()
+      e.stopPropagation()
