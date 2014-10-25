@@ -7,4 +7,5 @@ span.badge(data-js='cancel')
 form.form-inline
   .form-group
     label.sr-only(for='edit-name') 掲示板名
-    input#edit-name.form-control(type='text', placeholder='掲示板名を入力', value=board.get('name'))
+    input#edit-name.form-control(type='text', placeholder='掲示板名を入力', value=board.get('name'), data-js='edit_name')
+    .text-danger(data-js='invalid')
