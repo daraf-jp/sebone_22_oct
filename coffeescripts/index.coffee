@@ -4,6 +4,7 @@ require.config
     underscore: '../../bower_components/underscore/underscore'
     backbone: '../../bower_components/backbone/backbone'
     jade: '../../bower_components/jade/runtime'
+    backbone_relational: '../../bower_components/backbone-relational/backbone-relational'
 
 require ['jquery', 'routers/app', 'collections/boards'], ($, AppRouter, Boards) ->
   $ ->
