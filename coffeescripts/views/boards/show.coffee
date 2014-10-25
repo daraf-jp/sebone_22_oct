@@ -10,6 +10,8 @@ define ['jquery', 'backbone', 'templates/boards/show', 'templates/boards/edit'],
 
     initialize: (options) ->
       @board = options.board
+      @listenTo @board, 'invalid', (model, error) =>
+        @$('[data-js=invalid]').text error
 
     render: ->
       @$el.html templateShow(board: @board)
@@ -34,7 +36,10 @@ define ['jquery', 'backbone', 'templates/boards/show', 'templates/boards/edit'],
       e.stopPropagation()
 
       @board.set name: @$('[data-js=edit_name]').val()
-      @$el.html templateShow(board: @board)
+
+      @$('[data-js=invalid]').val('')
+      if @board.isValid()
+        @$el.html templateShow(board: @board)
 
     cancel: (e) ->
       e.preventDefault()
