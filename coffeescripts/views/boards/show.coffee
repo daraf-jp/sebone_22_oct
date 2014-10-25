@@ -6,6 +6,7 @@ define ['jquery', 'backbone', 'templates/boards/show', 'templates/boards/edit'],
       'click [data-js=destroy]' : 'destroy'
       'click [data-js=edit]' : 'edit'
       'click [data-js=done]' : 'done'
+      'click [data-js=cancel]' : 'cancel'
 
     initialize: (options) ->
       @board = options.board
@@ -35,3 +36,8 @@ define ['jquery', 'backbone', 'templates/boards/show', 'templates/boards/edit'],
       @board.set name: @$('[data-js=edit_name]').val()
       @$el.html templateShow(board: @board)
 
+    cancel: (e) ->
+      e.preventDefault()
+      e.stopPropagation()
+
+      @$el.html templateShow(board: @board)
