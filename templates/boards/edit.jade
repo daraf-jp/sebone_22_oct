@@ -1,0 +1,10 @@
+span.badge(data-js='destroy')
+  span.glyphicon.glyphicon-remove
+span.badge
+  span.glyphicon.glyphicon-ok
+span.badge
+  span.glyphicon.glyphicon-repeat
+form.form-inline
+  .form-group
+    label.sr-only(for='edit-name') 掲示板名
+    input#edit-name.form-control(type='text', placeholder='掲示板名を入力', value=board.get('name'))
