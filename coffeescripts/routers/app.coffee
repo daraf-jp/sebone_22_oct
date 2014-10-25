@@ -1,4 +1,4 @@
-define ['jquery', 'backbone', 'views/boards/boards'], ($, Backbone, BoardsView) ->
+define ['jquery', 'backbone', 'views/boards/boards', 'views/comments/comments'], ($, Backbone, BoardsView, CommentsView) ->
   class AppRouter extends Backbone.Router
     routes:
       ':cid' : 'renderComments'
@@ -16,6 +16,6 @@ define ['jquery', 'backbone', 'views/boards/boards'], ($, Backbone, BoardsView) 
     renderComments: (id) ->
       board = @boards.get(id)
       if board?
-        console.log board.get('name')
+        new CommentsView el: @$el, board: board
       else
         location.assign '#'
